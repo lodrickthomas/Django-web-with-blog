@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+   Articles
+{% endblock head %}
+    
+{% block body %}
+    <h2>This is articles page</h2> 
+    
+    {% for article in articles %}
+        
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.snippets }}</p>
+        <p><strong>Created at:</strong>:{{ article.date }}</p>
+
+
+        <a name="" id="" class="btn btn-primary" href="{% url 'articlesdetails' slug=article.slug %}" role="button">Read More</a>
+    
+
+        
+    {% endfor %}
+
+{% endblock body %}
+    
